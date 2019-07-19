@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
   <script src="https://npmcdn.com/leaflet@1.3.1/dist/leaflet-src.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -39,7 +40,11 @@
 <div id="map"></div>
 <img id="logos", src="http://rainfall.ikewai.org/webmap_dependences/logos.png" />
 <img id="legend", src="http://rainfall.ikewai.org/webmap_dependences/legend.png" />
-<button id="download" class="class="btn btn-primary"" onclick="window.location.href = 'https://ikeauth.its.hawaii.edu/postits/v2/b5ba1e0deeea4df5a979ebb1fe338826';">Download Dataset</button>
+<!-- update with ikewai shared link -->
+<button id="download" class="class="btn btn-primary""
+  onclick="window.location.href = 'https://ikeauth.its.hawaii.edu/postits/v2/b5ba1e0deeea4df5a979ebb1fe338826';">
+  <span class="fa fa-download fa-lg" aria-hidden="true">&nbsp;Download May Dataset</span>
+</button>
 <p id="date"></p>
 
 
@@ -48,6 +53,9 @@
 
 	//start up function to load map and alert
 		(function init() {
+      //update with ikewai shared link
+      var tiff ="https://ikeauth.its.hawaii.edu/postits/v2/cc96620a820cdc698a30db17732e0f76"
+
 			//alert("DO NOT share this link widely! This is a preview of the a pre-alpha product using very limited (version 0) data, of near real-time monthly rainfall. Use with CAUTION! This is a preliminary unpublished data product with known and unknown issues including but not limited to: missing stations and un-adressed data gaps. Product performance and caveats will be discussed in the final paper. Additionally, this web-map, data to download, and information will soon be available on a new website and data delivery platform. For inquiries email: Matthew Lucas - mplucas@hawaii.edu. Thank you and ALOHA!");
             	//make dynamic date text
 				n =  new Date();
@@ -93,13 +101,6 @@
             var mapLink ='<a href="http://www.esri.com/">Esri</a>';
             var wholink ='i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community';
 
-
-
-        var tiff ="https://ikeauth.its.hawaii.edu/postits/v2/cc96620a820cdc698a30db17732e0f76"
-        //"https://ikeauth.its.hawaii.edu/postits/v2/0c9961b73b8cea7938dc117cc6173907"
-        //"https://ikeauth.its.hawaii.edu/postits/v2/db348ee514cbdae5cdd4f985e0c1ea1b"
-        //"https://ikeauth.its.hawaii.edu/postits/v2/709a73b6d58c2f4e5fe83bec7c94835d"
-        //"https://ikeauth.its.hawaii.edu/postits/v2/4e96eb8bc1a1e23c8fa3ecc583c9c4b6"// "current_statewide_rf_lite_v0.tif";
         fetch(tiff).then(r => r.arrayBuffer()).then(function(tiffData) {
             let filter_nodata = function (v) { return v != -3.3999999521443642e+38; }; //this defines value or range of no data
             var s = L.ScalarField.fromGeoTIFF(tiffData);
