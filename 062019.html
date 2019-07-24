@@ -100,7 +100,8 @@
 
 
         //update with ikewai shared link
-        var tiff ="https://ikeauth.its.hawaii.edu/postits/v2/cc96620a820cdc698a30db17732e0f76"
+        //var tiff ="https://ikeauth.its.hawaii.edu/postits/v2/cc96620a820cdc698a30db17732e0f76"
+        var tiff ="https://ikeauth.its.hawaii.edu/postits/v2/0ca3be7d4be570914e890ededfa4ffa2"
         fetch(tiff).then(r => r.arrayBuffer()).then(function(tiffData) {
             let filter_nodata = function (v) { return v != -3.3999999521443642e+38; }; //this defines value or range of no data
             var s = L.ScalarField.fromGeoTIFF(tiffData);

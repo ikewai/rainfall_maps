@@ -11,23 +11,61 @@
   <div class="container-fluid">
   <h1>Monthly Hawaii Rainfall Maps</h1
   <div style="display: table-row">
-    <div class="card" style="padding:10px; width: 250px; display: table-cell;vertical-align: top;">
+    <div class="card" style="padding:10px; width: 375px; display: table-cell;vertical-align: top;">
       <h5>Select Monthly Map:</h5>
       <table>
         <tr><td>
-          <button id="year" class="btn btn-dark" onclick="load_map('062019.html')"><span class="fa fa-map-o fa-lg" aria-hidden="true">&nbsp;June 2019</span></button>
+          <button id="year" class="btn btn-dark btn-sm" onclick="load_map('062019.html')"><span class="fa fa-map-o fa-lg" aria-hidden="true">&nbsp;June 2019</span></button>
         </td>
         <td>
-          <button id="downloadJune" class="btn btn-dark" onclick="window.location.href = 'https://ikeauth.its.hawaii.edu/postits/v2/b5ba1e0deeea4df5a979ebb1fe338826';"><span class="fa fa-download fa-lg" aria-hidden="true"></span></button>
+          <!-- se https://ikeauth.its.hawaii.edu/postits/v2/0ca3be7d4be570914e890ededfa4ffa2
+              rf https://ikeauth.its.hawaii.edu/postits/v2/00ed287ed98afdf5e78fb011a131334c
+            anom  https://ikeauth.its.hawaii.edu/postits/v2/45268951516eddef2e771361eff20c9b-->
+            <button id="downloadMarch" class="btn btn-dark btn-sm" onclick="window.location.href = 'https://ikeauth.its.hawaii.edu/postits/v2/00ed287ed98afdf5e78fb011a131334c';"><span class="fa fa-download fa-lg" aria-hidden="true">RF</span></button>
+            <button id="downloadMarch" class="btn btn-dark btn-sm" onclick="window.location.href = 'https://ikeauth.its.hawaii.edu/postits/v2/0ca3be7d4be570914e890ededfa4ffa2';"><span class="fa fa-download fa-lg" aria-hidden="true">SE</span></button>
+            <button id="downloadMarch" class="btn btn-dark btn-sm" onclick="window.location.href = 'https://ikeauth.its.hawaii.edu/postits/v2/45268951516eddef2e771361eff20c9b';"><span class="fa fa-download fa-lg" aria-hidden="true">A</span></button>
         </td>
       </tr>
         <tr><td>
-          <button id="year" class="btn btn-dark" onclick="load_map('052019.html')"><span class="fa fa-map-o fa-lg" aria-hidden="true">&nbsp;May 2019</span</button>
+          <!-- se https://ikeauth.its.hawaii.edu/postits/v2/5b3e8073bce3b3a0aa4213bf212f5e6f
+               rf https://ikeauth.its.hawaii.edu/postits/v2/f328d2475ca183e4f41dd16945c89379
+               anom https://ikeauth.its.hawaii.edu/postits/v2/206fe7294412461b792a1c25a8451e5f-->
+          <button id="year" class="btn btn-dark btn-sm" onclick="load_map('052019.html')"><span class="fa fa-map-o fa-lg" aria-hidden="true">&nbsp;May 2019</span</button>
         </td>
         <td>
-          <button id="downloadMay" class="btn btn-dark" onclick="window.location.href = 'https://ikeauth.its.hawaii.edu/postits/v2/b5ba1e0deeea4df5a979ebb1fe338826';"><span class="fa fa-download fa-lg" aria-hidden="true"></span></button>
-        </td>
+          <button id="downloadMarch" class="btn btn-dark btn-sm" onclick="window.location.href = 'https://ikeauth.its.hawaii.edu/postits/v2/f328d2475ca183e4f41dd16945c89379';"><span class="fa fa-download fa-lg" aria-hidden="true">RF</span></button>
+          <button id="downloadMarch" class="btn btn-dark btn-sm" onclick="window.location.href = 'https://ikeauth.its.hawaii.edu/postits/v2/5b3e8073bce3b3a0aa4213bf212f5e6f';"><span class="fa fa-download fa-lg" aria-hidden="true">SE</span></button>
+          <button id="downloadMarch" class="btn btn-dark btn-sm" onclick="window.location.href = 'https://ikeauth.its.hawaii.edu/postits/v2/206fe7294412461b792a1c25a8451e5f';"><span class="fa fa-download fa-lg" aria-hidden="true">A</span></button>
+      </td>
       </tr>
+    </tr>
+  </tr>
+    <tr><td>
+      <!-- se https://ikeauth.its.hawaii.edu/postits/v2/dd81a06950e21c98a83509cd9c32b663
+            rf https://ikeauth.its.hawaii.edu/postits/v2/31ff6624bfe7a879d1c4a2aa4d1b5e7c
+            anom https://ikeauth.its.hawaii.edu/postits/v2/898ac8d197f0937448b9329f55152d08
+    -->
+      <button id="year" class="btn btn-dark btn-sm" onclick="load_map('042019.html')"><span class="fa fa-map-o fa-lg" aria-hidden="true">&nbsp;April 2019</span</button>
+    </td>
+    <td>
+      <button id="downloadMarch" class="btn btn-dark btn-sm" onclick="window.location.href = 'https://ikeauth.its.hawaii.edu/postits/v2/31ff6624bfe7a879d1c4a2aa4d1b5e7c';"><span class="fa fa-download fa-lg" aria-hidden="true">RF</span></button>
+      <button id="downloadMarch" class="btn btn-dark btn-sm" onclick="window.location.href = 'https://ikeauth.its.hawaii.edu/postits/v2/dd81a06950e21c98a83509cd9c32b663';"><span class="fa fa-download fa-lg" aria-hidden="true">SE</span></button>
+      <button id="downloadMarch" class="btn btn-dark btn-sm" onclick="window.location.href = 'https://ikeauth.its.hawaii.edu/postits/v2/898ac8d197f0937448b9329f55152d08';"><span class="fa fa-download fa-lg" aria-hidden="true">A</span></button>
+  </td>
+  </tr>
+</tr>
+      <tr><td>
+        <button id="year" class="btn btn-dark btn-sm" onclick="load_map('032019.html')"><span class="fa fa-map-o fa-lg" aria-hidden="true">&nbsp;March 2019</span</button>
+      </td>
+      <td>
+        <!--anom https://ikeauth.its.hawaii.edu/postits/v2/ce3c1abe3f330d7b18f49cf04edc0774
+            rf https://ikeauth.its.hawaii.edu/postits/v2/b8c4e995da24050194ac86569485a1ca
+            se https://ikeauth.its.hawaii.edu/postits/v2/71bafe0a84d7828eb033776f2e960ec9-->
+        <button id="downloadMarch" class="btn btn-dark btn-sm" onclick="window.location.href = 'https://ikeauth.its.hawaii.edu/postits/v2/b8c4e995da24050194ac86569485a1ca';"><span class="fa fa-download fa-lg" aria-hidden="true">RF</span></button>
+        <button id="downloadMarch" class="btn btn-dark btn-sm" onclick="window.location.href = 'https://ikeauth.its.hawaii.edu/postits/v2/71bafe0a84d7828eb033776f2e960ec9';"><span class="fa fa-download fa-lg" aria-hidden="true">SE</span></button>
+        <button id="downloadMarch" class="btn btn-dark btn-sm" onclick="window.location.href = 'https://ikeauth.its.hawaii.edu/postits/v2/ce3c1abe3f330d7b18f49cf04edc0774';"><span class="fa fa-download fa-lg" aria-hidden="true">A</span></button>
+      </td>
+    </tr>
       </table>
     </div>
     <div style="width: 1200px; height:600px; display: table-cell;">

@@ -43,7 +43,7 @@
 <!-- update with ikewai shared link -->
 <button id="download" class="class="btn btn-primary""
   onclick="window.location.href = 'https://ikeauth.its.hawaii.edu/postits/v2/b5ba1e0deeea4df5a979ebb1fe338826';">
-  <span class="fa fa-download fa-lg" aria-hidden="true">&nbsp;Download May Dataset</span>
+  <span class="fa fa-download fa-lg" aria-hidden="true">&nbsp;Download April Dataset</span>
 </button>
 <p id="date"></p>
 
@@ -54,7 +54,8 @@
 	//start up function to load map and alert
 		(function init() {
       //update with ikewai shared link
-      var tiff ="https://ikeauth.its.hawaii.edu/postits/v2/f328d2475ca183e4f41dd16945c89379"
+      var tiff ="https://ikeauth.its.hawaii.edu/postits/v2/31ff6624bfe7a879d1c4a2aa4d1b5e7c"
+
 			//alert("DO NOT share this link widely! This is a preview of the a pre-alpha product using very limited (version 0) data, of near real-time monthly rainfall. Use with CAUTION! This is a preliminary unpublished data product with known and unknown issues including but not limited to: missing stations and un-adressed data gaps. Product performance and caveats will be discussed in the final paper. Additionally, this web-map, data to download, and information will soon be available on a new website and data delivery platform. For inquiries email: Matthew Lucas - mplucas@hawaii.edu. Thank you and ALOHA!");
             	//make dynamic date text
 				n =  new Date();
@@ -63,7 +64,7 @@
 				year2 = d.getFullYear();
 				mon = n.getMonth();
 				const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-				document.getElementById("date").innerHTML = "<b> MAY - " + year2 + "</b>" + "<br>Preliminary Rainfall" + "<br>Version 0 <i>(very limited data)</i>";
+				document.getElementById("date").innerHTML = "<b> April - " + year2 + "</b>" + "<br>Preliminary Rainfall" + "<br>Version 0 <i>(very limited data)</i>";
       var baseMaps = {google: {
                   name: 'Google Satellite',
                   url: 'http://www.google.com/maps/vt?lyrs=y@189&gl=en&x={x}&y={y}&z={z}',
