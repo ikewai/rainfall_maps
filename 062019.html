@@ -15,7 +15,10 @@
     <script src="https://npmcdn.com/leaflet@1.2.0/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.3.4/chroma.min.js"></script>
     <script src="https://npmcdn.com/geotiff@0.3.6/dist/geotiff.js"></script> <!-- optional -->
-
+    <script src="leaflet.ajax.min.js"></script>
+    <script src="leaflet.bubble.js"></script>
+    <script src="chroma.min.js"></script>
+    <script src="rf-totals.geojson"></script>
     <!-- Plugin -->
     <script src="https://ihcantabria.github.io/Leaflet.CanvasLayer.Field/dist/leaflet.canvaslayer.field.js"></script>
 
@@ -75,7 +78,7 @@
 			var bounds = new L.LatLngBounds(  //defines bounds of map
                 new L.LatLng(14, -150),
                 new L.LatLng(26, -166));
-      var    tilelayer = [L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      var tilelayer = [L.tileLayer('http://www.google.com/maps/vt?lyrs=y@189&gl=en&x={x}&y={y}&z={z}', {
                     attribution: '&copy; '+mapLink+', '+wholink,
                     maxZoom: 15,
                     minZoom: 5,
@@ -97,7 +100,8 @@
                         maxBounds: bounds})//.fitBounds(bounds);
             var mapLink ='<a href="http://www.esri.com/">Esri</a>';
             var wholink ='i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community';
-
+    //    var geojsonLayer = new L.GeoJSON.AJAX("rf-totals.geojson");
+    //    geojsonLayer.addTo(map);
 
         //update with ikewai shared link
         //var tiff ="https://ikeauth.its.hawaii.edu/postits/v2/cc96620a820cdc698a30db17732e0f76"
@@ -122,7 +126,15 @@
                         .openOn(map);
                 }
             });
-            L.control.layers(baseMaps,null).addTo(map);
+          //  L.control.layers(baseMaps,null).addTo(map);
+            bubbles = L.bubbleLayer(rfStations, {
+              property: "total_rf_mm",
+              legend: true,
+              max_radius : 10,
+              tooltip : true,
+              scale: chroma.scale(['red', 'yellow', 'green','blue','violet']),
+            })
+            bubbles.addTo(map);
         })
     })() //invoke the function asap
     </script>
