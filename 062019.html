@@ -42,7 +42,7 @@
 <img id="legend", src="http://rainfall.ikewai.org/webmap_dependences/legend.png" />
 <!-- update with ikewai shared link -->
 <button id="download" class="class="btn btn-primary""
-  onclick="window.location.href = 'https://ikeauth.its.hawaii.edu/postits/v2/b5ba1e0deeea4df5a979ebb1fe338826';">
+  onclick="window.location.href = 'https://ikeauth.its.hawaii.edu/postits/v2/360483b1494962279b74ded71d686063';">
   <span class="fa fa-download fa-lg" aria-hidden="true">&nbsp;Download June Dataset</span>
 </button>
 <p id="date"></p>
@@ -101,7 +101,7 @@
 
         //update with ikewai shared link
         //var tiff ="https://ikeauth.its.hawaii.edu/postits/v2/cc96620a820cdc698a30db17732e0f76"
-        var tiff ="https://ikeauth.its.hawaii.edu/postits/v2/0ca3be7d4be570914e890ededfa4ffa2"
+        var tiff ="https://ikeauth.its.hawaii.edu/postits/v2/f2fe1af7b4096090700894d682afadd9"
         fetch(tiff).then(r => r.arrayBuffer()).then(function(tiffData) {
             let filter_nodata = function (v) { return v != -3.3999999521443642e+38; }; //this defines value or range of no data
             var s = L.ScalarField.fromGeoTIFF(tiffData);

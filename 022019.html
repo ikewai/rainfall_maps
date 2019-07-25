@@ -42,8 +42,8 @@
 <img id="legend", src="http://rainfall.ikewai.org/webmap_dependences/legend.png" />
 <!-- update with ikewai shared link -->
 <button id="download" class="class="btn btn-primary""
-  onclick="window.location.href = 'https://ikeauth.its.hawaii.edu/postits/v2/cf742944bd5dc025e0592aabc9fee9c8';">
-  <span class="fa fa-download fa-lg" aria-hidden="true">&nbsp;Download March Dataset</span>
+  onclick="window.location.href = 'https://ikeauth.its.hawaii.edu/postits/v2/da43925122d60c99875784687a1cae6d';">
+  <span class="fa fa-download fa-lg" aria-hidden="true">&nbsp;Download February Dataset</span>
 </button>
 <p id="date"></p>
 
@@ -53,6 +53,8 @@
 
 	//start up function to load map and alert
 		(function init() {
+      //update with ikewai shared link
+      var tiff ="https://ikeauth.its.hawaii.edu/postits/v2/7b7b42fcffe1c8b0c41e9f96fc92bd25"
 			//alert("DO NOT share this link widely! This is a preview of the a pre-alpha product using very limited (version 0) data, of near real-time monthly rainfall. Use with CAUTION! This is a preliminary unpublished data product with known and unknown issues including but not limited to: missing stations and un-adressed data gaps. Product performance and caveats will be discussed in the final paper. Additionally, this web-map, data to download, and information will soon be available on a new website and data delivery platform. For inquiries email: Matthew Lucas - mplucas@hawaii.edu. Thank you and ALOHA!");
             	//make dynamic date text
 				n =  new Date();
@@ -61,7 +63,7 @@
 				year2 = d.getFullYear();
 				mon = n.getMonth();
 				const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-				document.getElementById("date").innerHTML = "<b> March - " + year2 + "</b>" + "<br>Preliminary Rainfall" + "<br>Version 1";
+				document.getElementById("date").innerHTML = "<b> February - " + year2 + "</b>" + "<br>Preliminary Rainfall" + "<br>Version 1>";
       var baseMaps = {google: {
                   name: 'Google Satellite',
                   url: 'http://www.google.com/maps/vt?lyrs=y@189&gl=en&x={x}&y={y}&z={z}',
@@ -98,9 +100,6 @@
             var mapLink ='<a href="http://www.esri.com/">Esri</a>';
             var wholink ='i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community';
 
-
-        //update with ikewai shared link
-        var tiff ="https://ikeauth.its.hawaii.edu/postits/v2/f40fe932fecd812c76403597f28d41db"
         fetch(tiff).then(r => r.arrayBuffer()).then(function(tiffData) {
             let filter_nodata = function (v) { return v != -3.3999999521443642e+38; }; //this defines value or range of no data
             var s = L.ScalarField.fromGeoTIFF(tiffData);
