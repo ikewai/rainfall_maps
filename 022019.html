@@ -18,7 +18,10 @@
 
     <!-- Plugin -->
     <script src="https://ihcantabria.github.io/Leaflet.CanvasLayer.Field/dist/leaflet.canvaslayer.field.js"></script>
-
+    <script src="leaflet.ajax.min.js"></script>
+    <script src="leaflet.bubble.js"></script>
+    <script src="chroma.min.js"></script>
+    <script src="rf-totals-022019.geojson"></script>
     <style>
         body { margin:0; padding:0; }
         #map { position:absolute; top:0; bottom:0; width:100%; z-index: 1; }
@@ -42,7 +45,7 @@
 <img id="legend", src="http://rainfall.ikewai.org/webmap_dependences/legend.png" />
 <!-- update with ikewai shared link -->
 <button id="download" class="class="btn btn-primary""
-  onclick="window.location.href = 'https://ikeauth.its.hawaii.edu/postits/v2/da43925122d60c99875784687a1cae6d';">
+  onclick="window.location.href = 'https://ikeauth.its.hawaii.edu/postits/v2/068bc5a907471323d7deb0df5f8e4c01';">
   <span class="fa fa-download fa-lg" aria-hidden="true">&nbsp;Download CSV Dataset</span>
 </button>
 <p id="date"></p>
@@ -120,7 +123,15 @@
                         .openOn(map);
                 }
             });
-            L.control.layers(baseMaps,null).addTo(map);
+          //  L.control.layers(baseMaps,null).addTo(map);
+            bubbles = L.bubbleLayer(rfStations, {
+              property: "total_rf_mm",
+              legend: true,
+              max_radius : 10,
+              tooltip : true,
+              scale: chroma.scale(['red', 'yellow', 'green','blue','violet']),
+            })
+            bubbles.addTo(map);
         })
     })() //invoke the function asap
     </script>

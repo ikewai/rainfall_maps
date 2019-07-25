@@ -126,7 +126,7 @@
                         .openOn(map);
                 }
             });
-          //  L.control.layers(baseMaps,null).addTo(map);
+            //L.control.layers(null,mlayer).addTo(map);
             bubbles = L.bubbleLayer(rfStations, {
               property: "total_rf_mm",
               legend: true,
@@ -135,6 +135,7 @@
               scale: chroma.scale(['red', 'yellow', 'green','blue','violet']),
             })
             bubbles.addTo(map);
+
         })
     })() //invoke the function asap
     </script>
