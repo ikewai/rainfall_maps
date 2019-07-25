@@ -18,7 +18,10 @@
 
     <!-- Plugin -->
     <script src="https://ihcantabria.github.io/Leaflet.CanvasLayer.Field/dist/leaflet.canvaslayer.field.js"></script>
-
+    <script src="leaflet.ajax.min.js"></script>
+    <script src="leaflet.bubble.js"></script>
+    <script src="chroma.min.js"></script>
+    <script src="rf-totals-012019.geojson"></script>
     <style>
         body { margin:0; padding:0; }
         #map { position:absolute; top:0; bottom:0; width:100%; z-index: 1; }
@@ -120,7 +123,15 @@
                         .openOn(map);
                 }
             });
-            L.control.layers(baseMaps,null).addTo(map);
+            //L.control.layers(baseMaps,null).addTo(map);
+            bubbles = L.bubbleLayer(rfStations, {
+              property: "total_rf_mm",
+              legend: true,
+              max_radius : 10,
+              tooltip : true,
+              scale: chroma.scale(['red', 'yellow', 'green','blue','violet']),
+            })
+            bubbles.addTo(map);
         })
     })() //invoke the function asap
     </script>
