@@ -111,7 +111,7 @@
                             inFilter: filter_nodata,   //this filters the geotiff
                             color: chroma
                                     .scale(['red','yellow','green','blue','purple','indigo']) //this defines color pallet with range domain
-                                    .domain([0, 7500]), //the is set to 0-7500 1/10 mm or 0-750 mm
+                                    .domain([0, 750]), //the is set to 0-7500 1/10 mm or 0-750 mm
                                     //.domain([0, s.range[1]]), //the .range pulls the range of values from s (ScalarField) before filter
 
                         }).addTo(map);
